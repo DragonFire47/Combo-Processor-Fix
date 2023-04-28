@@ -14,7 +14,7 @@ namespace Combo_Processor_Fix
             }
             if (!PhotonNetwork.isMasterClient)
             {
-                Label($"Host mod: {(Mod.HostEnabled ? "Enabled" : "Disabled")}");
+                Label($"Host mod: {(Mod.HostEnabled ? "Enabled" : "Disabled")}, Mod is effectively {((Mod.HostEnabled && Mod.Enabled) ? "Enabled" : "Disabled")}");
             }
         }
 
