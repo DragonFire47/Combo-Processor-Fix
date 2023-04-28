@@ -7,9 +7,10 @@ namespace Combo_Processor_Fix
     {
         public override void Draw()
         {
-            if(Button("Combo Processor Fix " + (Mod.Enabled ? "Enabled" : "Disabled")))
+            if (Button("Combo Processor Fix " + (Mod.Enabled ? "Enabled" : "Disabled")))
             {
                 Mod.Enabled = !Mod.Enabled;
+                SyncModMessage.SendAllEnabledState();
             }
         }
 

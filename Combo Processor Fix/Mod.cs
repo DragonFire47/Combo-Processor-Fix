@@ -4,7 +4,14 @@ namespace Combo_Processor_Fix
 {
     public class Mod : PulsarMod
     {
-        public override string Version => "1.1.0";
+        Mod()
+        {
+            CachedHarmonyIdent = HarmonyIdentifier();
+        }
+
+        public static string CachedHarmonyIdent;
+
+        public override string Version => "1.1.1";
 
         public override string Author => "Dragon";
 
@@ -12,15 +19,18 @@ namespace Combo_Processor_Fix
 
 
         public static bool Enabled = true;
+        public static bool HostEnabled = false;
 
         public override void Disable()
         {
             Enabled = false;
+            SyncModMessage.SendAllEnabledState();
         }
 
         public override void Enable()
         {
             Enabled = true;
+            SyncModMessage.SendAllEnabledState();
         }
 
         public override bool IsEnabled()
