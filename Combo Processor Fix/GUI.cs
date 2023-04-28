@@ -20,7 +20,11 @@ namespace Combo_Processor_Fix
 
         public override string Name()
         {
-            return "Combo Processor Fix: " + ((Mod.HostEnabled && Mod.Enabled) ? "Enabled" : "Disabled");
+            if (!PhotonNetwork.isMasterClient)
+            {
+                return "Combo Processor Fix: " + ((Mod.HostEnabled && Mod.Enabled) ? "Enabled" : "Disabled");
+            }
+            return "Combo Processor Fix: " + (Mod.Enabled ? "Enabled" : "Disabled");
         }
     }
 }
