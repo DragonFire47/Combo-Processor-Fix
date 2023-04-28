@@ -4,7 +4,7 @@ namespace Combo_Processor_Fix
 {
     public class Mod : PulsarMod
     {
-        Mod()
+        public Mod()
         {
             CachedHarmonyIdent = HarmonyIdentifier();
         }

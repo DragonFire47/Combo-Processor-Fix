@@ -14,13 +14,13 @@ namespace Combo_Processor_Fix
             }
             if (!PhotonNetwork.isMasterClient)
             {
-                Label($"Host mod: {(Mod.HostEnabled ? "Enabled" : "Disabled")}, Mod is effectively {((Mod.HostEnabled && Mod.Enabled) ? "Enabled" : "Disabled")}");
+                Label($"Local mod: {(Mod.Enabled ? "Enabled" : "Disabled")}, Host mod: {(Mod.HostEnabled ? "Enabled" : "Disabled")}, Mod is effectively {((Mod.HostEnabled && Mod.Enabled) ? "Enabled" : "Disabled")}");
             }
         }
 
         public override string Name()
         {
-            return "Combo Processor Fix: " + (Mod.Enabled ? "Enabled" : "Disabled");
+            return "Combo Processor Fix: " + ((Mod.HostEnabled && Mod.Enabled) ? "Enabled" : "Disabled");
         }
     }
 }
