@@ -12,6 +12,10 @@ namespace Combo_Processor_Fix
                 Mod.Enabled = !Mod.Enabled;
                 SyncModMessage.SendAllEnabledState();
             }
+            if (!PhotonNetwork.isMasterClient)
+            {
+                Label($"Host mod: {(Mod.HostEnabled ? "Enabled" : "Disabled")}");
+            }
         }
 
         public override string Name()
