@@ -38,4 +38,13 @@ namespace Combo_Processor_Fix
             }
         }
     }
+
+    [HarmonyPatch(typeof(PLServer), "Start")]
+    class ServerStartPatch //resets host setting on server join. Catches cases where user joined game with mod enabled, then moves to a game without the mod.
+    {
+        static void Postfix()
+        {
+            Mod.HostEnabled = false;
+        }
+    }
 }

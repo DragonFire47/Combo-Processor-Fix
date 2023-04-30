@@ -11,7 +11,7 @@ namespace Combo_Processor_Fix
 
         public static string CachedHarmonyIdent;
 
-        public override string Version => "1.2.0";
+        public override string Version => "1.2.1";
 
         public override string Author => "Dragon";
 
